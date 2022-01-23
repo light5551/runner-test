@@ -1,2 +1,2 @@
 import os 
-print(os.environ['name'])
+print(os.argv[0])
