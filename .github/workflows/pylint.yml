@@ -22,4 +22,4 @@ jobs:
         pip install PyGithub==1.43.8
     - name: Analysing the code with pylint
       run: |
-        python main.py "${{ secrets.GITHUB_TOKEN }}"
+        python main.py "${{ github }}"
