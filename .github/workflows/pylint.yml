@@ -22,4 +22,7 @@ jobs:
         pip install PyGithub==1.43.8
     - name: Analysing the code with pylint
       run: |
-        python main.py "${{ github.event.number }}"
+        echo github.event.number = ${{ github.event.number  }}
+        echo github.event.pull_request.number = ${{ github.event.pull_request.number }}
+        echo github.event.issue.number = ${{ github.event.issue.number }}
+        #python main.py "${{ github.event.number }}"
