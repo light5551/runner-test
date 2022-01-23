@@ -21,19 +21,3 @@ jobs:
       if: success() && steps.findPr.outputs.number
       env:
         PR: ${{ steps.findPr.outputs.pr }}
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        
-        pip install PyGithub==1.43.8
-    - name: Analysing the code with pylint
-      run: |
-        echo github.event.number = ${{ github.event.number  }}
-        echo github.event.pull_request.number = ${{ github.event.pull_request.number }}
-        echo github.event.issue.number = ${{ github.event.issue.number }}
-        $(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
-        #python main.py "${{ github.event.number }}"
