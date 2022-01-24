@@ -12,3 +12,4 @@ pull = repo.get_pull(int(number_pr))
 pull_issue = repo.get_issue(pull.number)
 pull_issue.add_to_labels("Github action works fine!")
 #pull.edit(state='closed')
+
